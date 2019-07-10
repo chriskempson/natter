@@ -1,0 +1,15 @@
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/../netcrafter.php' ?>
+
+<title>{{title}}</title>
+<meta name="date" content="{{date}}">
+<meta name="author" content="{{author}}">
+
+<?php partial('header') ?>
+
+<h1><?= meta('title') ?></h1>
+
+<?= breadcrumb() ?>
+
+<?= discussion() ?>
+
+<?php partial('footer') ?>

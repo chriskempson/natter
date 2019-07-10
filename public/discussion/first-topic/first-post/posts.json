@@ -1,0 +1,25 @@
+[
+    {
+        "date": "1985-09-24",
+        "author": 1,
+        "message": "Wow, this is the first post."
+    },
+    {
+        "date": "2019-07-08 20:07",
+        "author": 2,
+        "message": "What an amazing post. Thank you for your insightful contribution!",
+        "edited": "2019-07-08 20:07"
+    },
+    {
+        "date": "2019-07-08 20:07",
+        "author": 2,
+        "message": "The third post has also been edited.",
+        "edited": "2019-07-08 20:07"
+    },
+    {
+        "date": "2019-07-08 20:07",
+        "author": 1,
+        "message": "# Heading\r\nSome text\r\n\r\n## Subheading\r\nMore text\r\n\r\n**bold**\r\n_italic_\r\n~~strikethrough~~\r\n\r\n![](\/netcrafter.gif)",
+        "edited": "2019-07-09 17:07"
+    }
+]

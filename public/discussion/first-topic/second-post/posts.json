@@ -1,0 +1,14 @@
+[
+    {
+        "date": "2019-07-09 14:07",
+        "author": 1,
+        "message": "test post",
+        "edited": "2019-07-09 17:07"
+    },
+    {
+        "date": "2019-07-09 14:07",
+        "author": 1,
+        "message": "test 2 edited",
+        "edited": "2019-07-09 14:07"
+    }
+]

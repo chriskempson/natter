@@ -1,0 +1,29 @@
+{
+    "1": {
+        "name": "Admin",
+        "email": "admin@example.com",
+        "joined": "2019-07-08",
+        "password": "d033e22ae348aeb5660fc2140aec35850c4da997",
+        "last-login": "",
+        "role": "admin",
+        "banned": false
+    },
+    "2": {
+        "name": "User",
+        "email": "user@example.com",
+        "joined": "2019-07-08",
+        "password": "12dea96fec20593566ab75692c9949596833adc9",
+        "last-login": "",
+        "role": "user",
+        "banned": false
+    },
+    "3": {
+        "name": "Banned",
+        "email": "banned@example.com",
+        "joined": "2019-07-08",
+        "password": "f702775542adefab834a1f25d8456bec8b7abfd9",
+        "last-login": "",
+        "role": "user",
+        "banned": true
+    }
+}
