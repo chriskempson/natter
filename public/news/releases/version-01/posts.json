@@ -1,0 +1,8 @@
+[
+    {
+        "date": "2019-07-12 17:07",
+        "author": 1,
+        "message": "Version 0.1 was released on 2019-07-08 with the following features:\r\n\r\n- Markdown support\r\n- Breadcrumb plugin\r\n- Edit post\r\n- Basic Session Plugin\r\n- Basic User Plugin\r\n- Delete post\r\n- Add post\r\n- Basic Discussion Plugin\r\n- HTML page structure",
+        "edited": "2019-07-12 17:07"
+    }
+]

@@ -118,12 +118,12 @@ function discussion($file = 'posts.json')
     echo partial('discussion-form');
 }
 
-function new_thread($path, $variables, $template = 'thread-template.txt') 
+function write_thread_file($path, $variables, $template = 'thread-template.txt') 
 {
     if (!session('user')) return;
 
     // Make directories
-    if (!file_exists($path)) {
+    if (!file_exists(DOCUMENT_ROOT . $path)) {
         mkdir(DOCUMENT_ROOT . $path, 0777, true);
     }
     
@@ -141,4 +141,31 @@ function new_thread($path, $variables, $template = 'thread-template.txt')
 
     // Write the template to the new location
     file_put_contents(DOCUMENT_ROOT . $path . '/index.php', $template);
+}
+
+function add_thread() {
+
+    // Set $query to hold query string vars
+    parse_str($_SERVER['QUERY_STRING'], $query);
+
+    // Handle post deletion
+    if (isset($query['new-thread'])) {
+        partial('discussion-new-thread-form');
+    }
+
+    // If someone has posted a title
+    if (isset($_POST['title'])) {
+
+        // Prepare the message
+        $title = strip_tags($_POST['title']);
+
+        $path = str_replace('index.php', '', $_SERVER['SCRIPT_NAME']);
+        write_thread_file($path . slug($title), [
+            'title' => $title,
+            'date' => gmdate('Y-m-d H:m'),
+            'author' => session('user')['id'],
+        ]);
+    }
+    
+    echo '<a href="' . $_SERVER['REQUEST_URI'] . '?new-thread">New Thread</a>';
 }

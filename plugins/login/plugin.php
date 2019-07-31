@@ -14,7 +14,7 @@ function login_form()
                 session('user', $user);
 
                 echo '<p>Welcome back ' . session('user')['name'] 
-                . '! <a href="/">Back</a></p>';
+                . '! <br><a href="/">Back</a></p>';
             }
         }
 

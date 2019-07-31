@@ -1,7 +1,7 @@
 <?php
 
 function read_users_json() {
-    return read_json_file(DOCUMENT_ROOT . '../plugins/users/users.json');
+    return read_json_file(DOCUMENT_ROOT . '/../plugins/users/users.json');
 }
 
 function users() {

@@ -1,8 +1,6 @@
 <?php include $_SERVER['DOCUMENT_ROOT'] . '/../netcrafter.php' ?>
 
-<title>Third Post</title>
-<meta name="date" content="2019-07-09 19:07">
-<meta name="author" content="">
+<title>Updates</title>
 
 <?php partial('header') ?>
 
@@ -10,6 +8,12 @@
 
 <?= breadcrumb() ?>
 
-<?= discussion() ?>
+<?= add_thread() ?>
+
+<nav>
+    <section id="post-listing">
+        <?= page_listing(SCRIPT_DIRECTORY . '/*') ?>
+    </section>
+</nav>
 
 <?php partial('footer') ?>

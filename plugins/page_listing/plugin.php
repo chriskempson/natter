@@ -12,7 +12,7 @@ function page_listing($glob)
             $page['disabled'] == "true") continue;
 
         $links[] = '<li>
-            <a href="' . $page['directory'] .'">' . $page['title'] .'</a>
+            <h2><a href="' . $page['directory'] .'">' . $page['title'] .'</a></h2>
             <div class="author">' . user($page['author'])['name'] . '</div>
             <div class="date">' . $page['date'] . '</div>
             <a href="?delete=' . $page['id'] . '">Delete</a>

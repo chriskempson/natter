@@ -6,12 +6,13 @@
  
 // **** CONFIG **************************************************************
 // Feel free to change any of the settings below to your liking
-// NOTE: All paths should be defined with trailing slashes
 
-define ('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT'] . '/');
+define ('DOCUMENT_ROOT', $_SERVER['DOCUMENT_ROOT']);
 define ('SCRIPT_FILENAME', $_SERVER['SCRIPT_FILENAME']);
-define ('PARTIAL_PATH', DOCUMENT_ROOT . '../partials/');
-define ('PLUGIN_PATH', DOCUMENT_ROOT . '../plugins/');
+define ('SCRIPT_NAME', $_SERVER['SCRIPT_NAME']);
+define ('SCRIPT_DIRECTORY', str_replace('/index.php', '', SCRIPT_NAME));
+define ('PARTIAL_PATH', DOCUMENT_ROOT . '/../partials/');
+define ('PLUGIN_PATH', DOCUMENT_ROOT . '/../plugins/');
 
 // **** HELPER FUNCTIONS ****************************************************
 // These functions are exposed by Netcrafter to help you build your website
@@ -71,8 +72,8 @@ function meta_from_file($file, $name = null)
     $file_meta['file'] = $file;
 
     // Prepend file directory
-    $file_meta['directory'] = '/' 
-        . str_replace(DOCUMENT_ROOT, '',  dirname($file)) . '/';
+    $file_meta['directory'] = 
+        str_replace(DOCUMENT_ROOT, '',  dirname($file)) . '/';
 
     // Add title tag
     preg_match("/<title>(.*)<\/title>/siU", 
@@ -110,10 +111,11 @@ foreach (glob(PLUGIN_PATH . '*/plugin.php') as $filename)
 // **** INIT ****************************************************************
 
 // Deliver a 404 if a file doesn't exist when no filename is requested
+// This is mainly for PHP's in-built server
 $request_path = parse_url($_SERVER['REQUEST_URI'])['path'];
-if (!is_file(DOCUMENT_ROOT . $request_path . '/index.php')) {
+if (!is_file(DOCUMENT_ROOT . $request_path . 'index.php')) {
     http_response_code(404);
-    die('File ' . $_SERVER['REQUEST_URI'] . '/index.php not found.');
+    die('File ' . $_SERVER['REQUEST_URI'] . 'index.php not found.');
 }
 
 // Get the ball rolling with the first partial
